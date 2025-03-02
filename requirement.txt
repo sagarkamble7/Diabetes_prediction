@@ -86,6 +86,7 @@ rich
 rpds-py
 rsa
 scikit-learn
+sklearn
 scipy
 seaborn
 selenium
