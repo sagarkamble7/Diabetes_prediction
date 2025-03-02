@@ -1,11 +1,29 @@
-import streamlit as st
-import numpy as np
-import pickle
+# import streamlit as st
+# import numpy as np
+# import pickle
 
 # model = pickle.load(open("diabetes_svc_model.pkl", "rb"))
 
-with open(r'diabetes_svc_model.pkl', "rb") as f:
-        model = pickle.load(f)
+# with open(r'diabetes_svc_model.pkl', "rb") as f:
+#         model = pickle.load(f)
+import streamlit as st
+import os
+
+# Ensure required libraries are installed
+os.system("pip install -r requirements.txt")
+
+import numpy as np
+import pickle
+import sklearn  # Ensure scikit-learn is available
+
+# Load the model
+try:
+    model = pickle.load(open("diabetes_svc_model.pkl", "rb"))
+    st.success("✅ Model loaded successfully!")
+except ModuleNotFoundError:
+    st.error("❌ Model loading failed! Ensure `scikit-learn` is installed.")
+
+st.title("Diabetes Prediction App")
 
 
 st.title("Diabetes Prediction App")
