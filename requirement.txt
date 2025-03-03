@@ -82,3 +82,4 @@ tzdata
 urllib3
 watchdog
 wcwidth
+sklearn
